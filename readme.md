@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/joyo7u7l720an8oi?svg=true)](https://ci.appveyor.com/project/holllygun/typescript)
