@@ -12,18 +12,16 @@ export default class Cart {
     }
 
     totalSum(): number {
-        let sum = 0
-        for (const item of this._items) {
-            sum += item.price;
-        }
-        return sum;
+        const totalSum = this._items.reduce(function(sum, currentItem){
+            return sum + currentItem.price
+        }, 0)
+
+        return totalSum;
     }
 
     totalSumDiscount(percentage: number): number{
-        let sum = 0
-        for (const item of this._items) {
-            sum += item.price;
-        }
+        let sum = this.totalSum()
+
         return sum - sum * (percentage/100);
     }
 
@@ -31,7 +29,3 @@ export default class Cart {
         this._items = this._items.filter(item => item.id !==id);
     }
 }
-// Для функций обязательно:
-
-// Указание типов параметров
-// Указание типа возвращаемого значения (если функция ничего не возвращает, то должен быть указан тип void)
